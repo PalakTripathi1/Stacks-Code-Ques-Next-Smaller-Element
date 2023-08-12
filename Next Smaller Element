@@ -1,0 +1,25 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+     int a[4];
+     for(int i=0;i<4;i++){
+          cin>>a[i];
+     }
+stack<int>s;
+s.push(-1);
+vector<int>ans;
+for(int i=3;i>=0;i--){
+int curr=a[i];
+
+     while(s.top()>curr){
+          s.pop();
+     }
+     ans.push_back(s.top());
+     s.push(curr);
+}
+
+for(auto i:ans){
+     cout<<i<<endl;
+}
+     return 0;
+}
